@@ -62,6 +62,7 @@ app.get("/:shorturl", function (req, res) {
                         original_url: 1,
                         _id: 0
                     }, function (err, answer) {
+                        if (err) throw  err
                         if (answer === null) {
                             res.json({
                                 "error": "url not in db"
